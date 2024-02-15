@@ -3,7 +3,7 @@
 This is a starter project for react.
 Please find the Guidelines for the project:
 
-**Requirements**
+## Requirements
 
 1. Use Vite (as a bundler)
 2. Use Typescript
@@ -12,24 +12,29 @@ Please find the Guidelines for the project:
 No specific functionality is necessary (like headings, buttons, pages, etc.) - at the end, it’s just a starter.
 Do not add any styling libraries. - We want to have a flexible starter!
 
-**Additional requirements**
+### Additional requirements
 
 1. Create a Github repository.
 2. Commit your changes frequently. (For example - you’ve just initialised the project - commit “Initial commit”. You’ve configured the tsconfig.json, another commit) Keep them small but meaningful.
-   Adjust your README.md to explain your project better.
+Adjust your README.md to explain your project better.
 
-**Time limit**
-4 hours
+**Time limit**: 4 hours
 
+## Getting Started
 
-1. To install [Vite](https://vitejs.dev/guide/) as a bundler:
-```
+1. **Install Vite**:
+
+   To install [Vite](https://vitejs.dev/guide/) as a bundler:
+
+   ```bash
    npm create vite@latest
-```   
 
 
-- follow the Indications on the terminal, select a name, React as Framework, Typescript as Variant
-- to run the project type in terminal:
+Follow the indications on the terminal, select a name, React as Framework, Typescript as Variant.
+
+**Run the Project:**
+
+After creating the project, navigate to the project folder and install dependencies:
 
 ```
   cd (folder name) react-starter
@@ -43,23 +48,24 @@ Do not add any styling libraries. - We want to have a flexible starter!
 "paths": {
 "@app/_": ["src/_"],
 "@shared/_": ["src/shared/_"]
-}
+}```
 
-- Update Module Resolution (For Node.js):
+Update Module Resolution (For Node.js):
 
 ```npm install tsconfig-paths --save-dev```
 
 
 4. To configure Jest and React testing library:
+
 ```npm install --save-dev jest typescript ts-jest @types/jest
 
     npm install --save-dev jest @testing-library/react @testing-library/jest-dom
 
     npm install --save-dev jest-environment-jsdom
 
-    npx ts-jest config:init
-```
-Configure jext.config.cjs file:
+    npx ts-jest config:init```
+
+Configure jest.config.cjs file:
 
     /* eslint-disable no-undef */
     // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -71,6 +77,9 @@ Configure jext.config.cjs file:
     };
 
 5. Created a component, a Text.test.tsx file to test if the heading is being rendered
+
+
+## Troubleshooting
 
 - While running npm test, encountered error: " "Missing script" : 'test'"
 
@@ -85,11 +94,9 @@ Fixed: in package.json added:
 
 - After running npm test encountered warning: ts-jest[config] (WARN) message TS151001: If you have issues related to imports, you should consider setting `esModuleInterop` to `true` in your TypeScript configuration file (usually `tsconfig.json`). See https://blogs.msdn.microsoft.com/typescript/2018/01/31/announcing-typescript-2-7/#easier-ecmascript-module-interoperability for more information.
 
-Fixed by adding in tsconfig.json:
-  "esModuleInterop": true,
+Fixed by adding in tsconfig.json: "esModuleInterop": true,
 
-
-## Setup Github
+## Github setup
 
 1. Create a local folder and connect it to [Github](https://github.com/)
 
