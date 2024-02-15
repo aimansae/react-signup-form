@@ -23,17 +23,19 @@ Do not add any styling libraries. - We want to have a flexible starter!
 
 
 1. To install [Vite](https://vitejs.dev/guide/) as a bundler:
-
+```
    npm create vite@latest
+```   
 
 
 - follow the Indications on the terminal, select a name, React as Framework, Typescript as Variant
 - to run the project type in terminal:
 
-
+```
   cd (folder name) react-starter
   npm i
   npm run dev
+```  
 
 3. to configure Ts path aliases in tsconfig.json add :
 
@@ -45,10 +47,12 @@ Do not add any styling libraries. - We want to have a flexible starter!
 
 - Update Module Resolution (For Node.js):
 
-  npm install tsconfig-paths --save-dev
+```
+npm install tsconfig-paths --save-dev
+``
 
 4. To configure Jest and React testing library:
-
+```
     npm install --save-dev jest typescript ts-jest @types/jest
 
     npm install --save-dev jest @testing-library/react @testing-library/jest-dom
@@ -56,7 +60,7 @@ Do not add any styling libraries. - We want to have a flexible starter!
     npm install --save-dev jest-environment-jsdom
 
     npx ts-jest config:init
-
+```
 Configure jext.config.cjs file:
 
     /* eslint-disable no-undef */
@@ -73,16 +77,18 @@ Configure jext.config.cjs file:
 - While running npm test, encountered error: " "Missing script" : 'test'"
 
 Fixed: in package.json added:
+```
   "scripts": {
   "test": "jest"
 }
+```
 
 - TypeError: expect(...).toHaveTextContent is not a function
 
 - After running npm test encountered warning: ts-jest[config] (WARN) message TS151001: If you have issues related to imports, you should consider setting `esModuleInterop` to `true` in your TypeScript configuration file (usually `tsconfig.json`). See https://blogs.msdn.microsoft.com/typescript/2018/01/31/announcing-typescript-2-7/#easier-ecmascript-module-interoperability for more information.
 
 Fixed by adding in tsconfig.json:
-   "esModuleInterop": true,
+  ``` "esModuleInterop": true,
 
 
 ## Setup Github
@@ -91,16 +97,18 @@ Fixed by adding in tsconfig.json:
 
 In terminal Terminal type : 
 
-  git init
+  ```git init
   git add . 
   git commit -m ‘First commit’
+  ```
 
 2. Open github and create new reposotory
 
 Copy the link and in terminal add:
 
-  git remote add origin (paste the link to the Github repo here)
+  ```git remote add origin (paste the link to the Github repo here)
   git push origin master
+  ```
 
 In needed Enter credentials to connect the IDE to Gthub
 
