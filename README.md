@@ -37,8 +37,8 @@ Do not add any styling libraries. - We want to have a flexible starter!
   npm run dev
 ```  
 
-3. to configure Ts path aliases in tsconfig.json add :
-
+3. To configure Ts path aliases in tsconfig.json add :
+```
 "baseUrl": "./",
 "paths": {
 "@app/_": ["src/_"],
@@ -47,13 +47,11 @@ Do not add any styling libraries. - We want to have a flexible starter!
 
 - Update Module Resolution (For Node.js):
 
+```npm install tsconfig-paths --save-dev
 ```
-npm install tsconfig-paths --save-dev
-``
 
 4. To configure Jest and React testing library:
-```
-    npm install --save-dev jest typescript ts-jest @types/jest
+```npm install --save-dev jest typescript ts-jest @types/jest
 
     npm install --save-dev jest @testing-library/react @testing-library/jest-dom
 
@@ -93,7 +91,7 @@ Fixed by adding in tsconfig.json:
 
 ## Setup Github
 
-1.create a local folder and connect it to [Github](https://github.com/)
+1. Create a local folder and connect it to [Github](https://github.com/)
 
 In terminal Terminal type : 
 
@@ -107,8 +105,7 @@ In terminal Terminal type :
 Copy the link and in terminal add:
 
   ```git remote add origin (paste the link to the Github repo here)
-  git push origin master
-  ```
+  git push origin master```
 
 In needed Enter credentials to connect the IDE to Gthub
 
