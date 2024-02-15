@@ -47,8 +47,8 @@ Do not add any styling libraries. - We want to have a flexible starter!
 
 - Update Module Resolution (For Node.js):
 
-```npm install tsconfig-paths --save-dev
-```
+```npm install tsconfig-paths --save-dev```
+
 
 4. To configure Jest and React testing library:
 ```npm install --save-dev jest typescript ts-jest @types/jest
@@ -86,7 +86,7 @@ Fixed: in package.json added:
 - After running npm test encountered warning: ts-jest[config] (WARN) message TS151001: If you have issues related to imports, you should consider setting `esModuleInterop` to `true` in your TypeScript configuration file (usually `tsconfig.json`). See https://blogs.msdn.microsoft.com/typescript/2018/01/31/announcing-typescript-2-7/#easier-ecmascript-module-interoperability for more information.
 
 Fixed by adding in tsconfig.json:
-  ``` "esModuleInterop": true,
+  "esModuleInterop": true,
 
 
 ## Setup Github
@@ -97,8 +97,7 @@ In terminal Terminal type :
 
   ```git init
   git add . 
-  git commit -m ‘First commit’
-  ```
+  git commit -m ‘First commit’```
 
 2. Open github and create new reposotory
 
@@ -107,6 +106,6 @@ Copy the link and in terminal add:
   ```git remote add origin (paste the link to the Github repo here)
   git push origin master```
 
-In needed Enter credentials to connect the IDE to Gthub
+If needed Enter credentials to connect the IDE to Gthub
 
 Resources found on [Youtube](https://www.youtube.com/watch?v=vbQ2bYHxxEA)
