@@ -7,6 +7,9 @@
     "skipLibCheck": true,
     "types": ["jest", "@testing-library/jest-dom"],
     "esModuleInterop": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
