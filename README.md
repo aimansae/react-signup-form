@@ -67,3 +67,8 @@ git push origin master
 - Download extension Tailwind CSS IntelliSense
 
 
+### Form Validation
+
+For form validation used Reach hoof form and Zod:
+
+            npm install react-hook-form zod @hookform/resolvers
