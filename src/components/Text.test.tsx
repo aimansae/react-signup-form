@@ -1,5 +1,5 @@
 import { render,screen } from "@testing-library/react"
-import Text from "./Text"
+import Text from "./Main"
 
 test('h contains a text', ()=>{
     render(<Text/>)

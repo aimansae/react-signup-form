@@ -1,119 +1,69 @@
 # React + TypeScript + Vite
 
-This is a starter project for react.
+This is a simple React Signup Form project made using a starter project for react.
 Please find the Guidelines for the project:
 
-## Requirements
+## Requirements: Create a Sign up form project.
 
-1. Use Vite (as a bundler)
-2. Use Typescript
-3. Configure TS path aliases
-4. Configure [Jest](https://kulshekhar.github.io/ts-jest/docs/getting-started/installation) & React testing library and write a single or multiple unit tests. They all have to be passing! (For example, you can test if a text is being rendered in a component.)
-   No specific functionality is necessary (like headings, buttons, pages, etc.) - at the end, it’s just a starter.
-   Do not add any styling libraries. - We want to have a flexible starter!
+1. Use the previous starter project, to kick-start your development.
+2. Create a new repository and push the starter as initial commit.
+3. Pick a styling solution of your choice. (I’d suggest you to use TailwindCSS). Once configured, push your changes! Keep your commit messages consistent and meaningful!
+   Start implementing the sign up form. Make sure to implement input validations. Handle the errors gracefully by showing error messages below each input.
+4. Use a pair of hardcoded username and password (and display them somewhere) to simulate the success output.
+5. For all other pairs of username/password simulate error output. (display an error message somewhere for example).
+6. Make sure the design is responsive (doesn’t have to be perfect, but it should at least look good and not be completely broken)
+7. Add tests, no excuses
 
-### Additional requirements
+## Additional requirements
 
 1. Create a Github repository.
-2. Commit your changes frequently. (For example - you’ve just initialised the project - commit “Initial commit”. You’ve configured the tsconfig.json, another commit) Keep them small but meaningful.
-   Adjust your README.md to explain your project better.
+2. Commit your changes regularly.
+3. Adjust your README.md to explain your project.
+4. Deploy it to Netlify for free and put the URL in the README.md.
+5. How should it look
 
-**Time limit**: 4 hours
+![Image Description](../react-starter-project/src/assets/form-output.png)
 
-## Getting Started
+**Time limit: 8 hours**
 
-1. **Install Vite**:
+Starter Project references can be found [here](https://github.com/aimansae/react-starter-project)
 
-   To install [Vite](https://vitejs.dev/guide/) as a bundler:
+# Getting Started
 
-   ```bash
-   npm create vite@latest
-   ```
+## Steps to use starter project
 
-Follow the indications on the terminal, select a name, React as Framework, Typescript as Variant.
+1. Create a new Repository in [Github]()
+2. open command Plaette in Vs Code and type Git clone
+3. Paste the link from Github's starter project (all files will be locally imported to VsCode)
+4. Make sure no node_module files are there
+5. In terminal type:
+   npm i
 
-**Run the Project:**
+Start Project with:
 
-After creating the project, navigate to the project folder and install dependencies:
+      npm run dev
 
-```
-  cd (folder name) react-starter
-  npm i
-  npm run dev
-```
+### Commit Repo to Git
 
-3. To configure Ts path aliases in tsconfig.json add :
-
-```
-"baseUrl": "./",
-"paths": {
-"@app/_": ["src/_"],
-"@shared/_": ["src/shared/_"]
-}
-```
-
-Update Module Resolution (For Node.js):
-
-npm install tsconfig-paths --save-dev
-
-4. To configure Jest and React testing library:
-
-   npm install --save-dev jest typescript ts-jest @types/jest
-
-   npm install --save-dev jest @testing-library/react @testing-library/jest-dom
-
-   npm install --save-dev jest-environment-jsdom
-
-   npx ts-jest config:init
-
-Configure jest.config.cjs file:
-
-    /* eslint-disable no-undef */
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const { defaults } = require('ts-jest/presets/index.js');
-
-    module.exports = {
-      ...defaults,
-      testEnvironment: 'jsdom',
-    };
-
-5. Created a component, a Text.test.tsx file to test if the heading is being rendered
-
-## Troubleshooting
-
-- While running npm test, encountered error: " "Missing script" : 'test'"
-
-Fixed: in package.json added:
-
-```
-  "scripts": {
-  "test": "jest"
-}
-```
-
-- TypeError: expect(...).toHaveTextContent is not a function
-
-- After running npm test encountered warning: ts-jest[config] (WARN) message TS151001: If you have issues related to imports, you should consider setting `esModuleInterop` to `true` in your TypeScript configuration file (usually `tsconfig.json`). See https://blogs.msdn.microsoft.com/typescript/2018/01/31/announcing-typescript-2-7/#easier-ecmascript-module-interoperability for more information.
-
-Fixed by adding in tsconfig.json: "esModuleInterop": true,
-
-## Github setup
-
-1. Create a local folder and connect it to [Github](https://github.com/)
-
-In terminal Terminal type :
-
-git init
+In terminal type:
 git add .
-git commit -m ‘First commit’
-
-2. Open github and create new reposotory
-
-Copy the link and in terminal add:
-
-git remote add origin (paste the link to the Github repo here)
+git commit -m 'Commit message here'
+git remote remove origin
+git remote add origin *link to the new repo here*
 git push origin master
 
-If needed Enter credentials to connect the IDE to Gthub
+## Styling With [TailwindCss](https://tailwindcss.com/docs/guides/create-react-app:
+)
 
-Resources found on [Youtube](https://www.youtube.com/watch?v=vbQ2bYHxxEA)
+- Install tailwind: 
+      npm install tailwindcss@latest postcss@latest autoprefixer@latest
+
+- Create tailwind.config.js file:
+      npx tailwindcss init
+
+- Add content to tailwind.config.js file: 
+      './src/**/*.{js,jsx,ts,tsx}'
+
+- Download extension Tailwind CSS IntelliSense
+
+
