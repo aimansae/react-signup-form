@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# Signup Form
 
 This is a simple React Signup Form project made using a starter project for react.
 Please find the Guidelines for the project:
