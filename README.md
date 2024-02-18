@@ -16,7 +16,7 @@ Please find the Guidelines for the project:
 
 ## Additional requirements
 
-1. Create a Github repository.
+1. Create a Github [repository](https://github.com/).
 2. Commit your changes regularly.
 3. Adjust your README.md to explain your project.
 4. Deploy it to Netlify for free and put the URL in the README.md.
@@ -32,7 +32,7 @@ Starter Project references can be found [here](https://github.com/aimansae/react
 
 ## Steps to use starter project
 
-1. Create a new Repository in [Github]()
+1. Create a new Repository in [Github](https://github.com/aimansae/react-signup-form)
 2. open command Plaette in Vs Code and type Git clone
 3. Paste the link from Github's starter project (all files will be locally imported to VsCode)
 4. Make sure no node_module files are there
@@ -72,3 +72,8 @@ git push origin master
 For form validation used Reach hoof form and Zod:
 
             npm install react-hook-form zod @hookform/resolvers
+
+
+## Deployment
+
+The app is deployed using [Netlify](https://as-react-signup-form.netlify.app/)

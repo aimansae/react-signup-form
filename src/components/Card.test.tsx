@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import Text from "./Card";
+import Card from "./Card";
 
 test("h contains a text", () => {
-  render(<Text />);
+  render(<Card />);
   const textElement = screen.getByRole("heading", { level: 1 });
   expect(textElement.textContent).toBe("Hello");
 });
