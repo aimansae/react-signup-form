@@ -1,4 +1,4 @@
-import Image from "../assets/hero-image.png";
+import focusImage from "../assets/hero-image.png";
 
 const HeroImage = () => {
   return (
@@ -6,7 +6,7 @@ const HeroImage = () => {
       <img
         className="w-full h-full object-cover"
         alt="hero image"
-        src={Image}
+        src={focusImage}
       />
     </div>
   );

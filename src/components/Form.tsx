@@ -14,7 +14,6 @@ const schema = z.object({
 
 export type FormData = z.infer<typeof schema>;
 
-
 const Form = () => {
   const [showMessage, setShowMessage] = useState(false);
   const [formInput, setFormInput] = useState<FormData | null>(null);
@@ -33,9 +32,9 @@ const Form = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div data-testid="form-component" className="flex flex-col justify-center items-center">
       {showMessage ? (
-       <SuccessMesage formInput={formInput}/>
+        <SuccessMesage formInput={formInput} />
       ) : (
         <div className="w-full mx-auto ">
           <div className="text-right flex justify-end items-center p-2 text-xs">
@@ -112,9 +111,7 @@ const Form = () => {
             >
               Login
             </button>
-            <SocialMediaLogin/>
-
-          
+            <SocialMediaLogin />
           </form>
         </div>
       )}

@@ -22,7 +22,7 @@ Please find the Guidelines for the project:
 4. Deploy it to Netlify for free and put the URL in the README.md.
 5. How should it look
 
-![Image Description](../react-starter-project/src/assets/form-output.png)
+![Image Description](./src/assets/form-output.png)
 
 **Time limit: 8 hours**
 
@@ -49,29 +49,80 @@ In terminal type:
 git add .
 git commit -m 'Commit message here'
 git remote remove origin
-git remote add origin *link to the new repo here*
+git remote add origin _link to the new repo here_
 git push origin master
 
 ## Styling With [TailwindCss](https://tailwindcss.com/docs/guides/create-react-app:
+
 )
 
-- Install tailwind: 
-      npm install tailwindcss@latest postcss@latest autoprefixer@latest
+- Install tailwind:
+  npm install tailwindcss@latest postcss@latest autoprefixer@latest
 
 - Create tailwind.config.js file:
-      npx tailwindcss init
+  npx tailwindcss init
 
-- Add content to tailwind.config.js file: 
-      './src/**/*.{js,jsx,ts,tsx}'
+- Add content to tailwind.config.js file:
+  './src/\*_/_.{js,jsx,ts,tsx}'
 
 - Download extension Tailwind CSS IntelliSense
-
 
 ### Form Validation
 
 For form validation used Reach hoof form and Zod:
 
             npm install react-hook-form zod @hookform/resolvers
+
+## Troubleshooting
+
+While running tests encountered the following paring error for focusImage
+
+![Image Error1](./src//assets/image-error1.PNG)
+![Image Error2](./src//assets/image-error1.PNG)
+
+**Fixed** by installing:
+npm install --save-dev jest-transform-stub
+
+    include transofrmer for images in package.json file:
+      "transform": {
+    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/node_modules/jest-transform-stub"
+
+}
+
+did not work
+
+1. Created a _ _mocks_ _ directory with imageMock.js file in it:
+    module.exports = "test-file-stub";
+
+2. Removed jest.config.cjs file, add the configuration under Jest in package,json file:
+    "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/__mocks__/imageMock.js"
+    }
+  }
+
+While running test for Card Component faced the following error:
+![Jest Error](./src//assets/tobeindoc.PNG)
+
+**Fixed**:
+
+toBeInTheDocument is not part of RTL. Need to install [jest-dom](https://github.com/testing-library/jest-dom/) to enable it.
+
+    npm install --save-dev @testing-library/jest-dom
+
+If you're using TypeScript, make sure your setup file is a .ts and not a .js to include the necessary types.
+
+You will also need to include your setup file in your tsconfig.json if you haven't already:
+
+  // In tsconfig.json
+  "include": [
+    ...
+    "./jest-setup.ts"
+  ],   
+And then import it in your test files by:
+
+import '@testing-library/jest-dom'
 
 
 ## Deployment

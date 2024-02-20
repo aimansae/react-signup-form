@@ -1,8 +1,11 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import Card from "./Card";
+import "@testing-library/jest-dom";
 
-test("h contains a text", () => {
-  render(<Card />);
-  const textElement = screen.getByRole("heading", { level: 1 });
-  expect(textElement.textContent).toBe("Hello");
+describe("Card Component", () => {
+  test("Card renders Form Component", () => {
+    const { getByTestId } = render(<Card />);
+    const formComponent = getByTestId("form-component");
+    expect(formComponent).toBeInTheDocument();
+  });
 });
