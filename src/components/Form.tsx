@@ -52,16 +52,15 @@ const Form = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(formValues);
     const { formIsValid, displayErrors } = inputValidation(formValues);
 
     if (formIsValid) {
       setShowMessage(true);
-      setSumbittedData(formValues)
+      setSumbittedData(formValues);
       setFormValues({ username: '', email: '', password: '' });
     } else {
       setErrors(displayErrors);
-      console.log('form is correct', formValues);
+      
     }
   };
 
@@ -87,38 +86,48 @@ const Form = () => {
             <h2 className="l font-bold md:text-xl">Welcome to Focus!</h2>
             <h3 className="text-sm  text-gray-400 md:text-xs">Register your account</h3>
             <div className="flex flex-col py-2">
-              <label className="my-2 text-sm ">Name</label>
+              <label htmlFor="username" className="my-2 text-sm ">
+                Username
+              </label>
               <input
                 onChange={handleChange}
                 type="text"
+                id="username"
                 name="username"
                 placeholder="Jhon"
                 value={formValues.username}
                 className="placeholder-sm rounded-md border p-2 text-xs text-[#7433FF] outline-none focus:border-[#7433FF]"></input>
 
-              {errors && <p className="my-2 text-xs italic text-[#e46b6b]">{errors.username}</p>}
+              {errors && <p data-testid='username-error' className="my-2 text-xs italic text-[#e46b6b]">{errors.username}</p>}
             </div>
             <div className="flex flex-col">
-              <label className="my-2 text-left text-sm">Email</label>
+              <label htmlFor="email" className="my-2 text-left text-sm">
+                Email
+              </label>
               <input
                 onChange={handleChange}
                 value={formValues.email}
                 type="text"
                 name="email"
+                id="email"
                 placeholder="focus001@gmail.com"
                 className="placeholder-sm rounded-md border p-2 text-xs text-[#7433FF] outline-none focus:border-[#7433FF]"
               />
               {errors && <p className="my-2 text-xs italic text-[#e46b6b]">{errors.email}</p>}
             </div>
-            <div className="flex flex-col ">
-              <label className="my-2 text-sm ">Password</label>
+            <div className="flex flex-col">
+              <label htmlFor="password" className="my-2 text-left text-sm">
+                Password
+              </label>
               <input
                 onChange={handleChange}
                 value={formValues.password}
-                type="text"
+                type="password"
                 name="password"
+                id="password"
                 placeholder="8+ characters"
-                className="placeholder-sm rounded-md border p-2 text-xs text-[#7433FF] outline-none focus:border-[#7433FF]"></input>
+                className="placeholder-sm rounded-md border p-2 text-xs text-[#7433FF] outline-none focus:border-[#7433FF]"
+              />
               {errors && <p className="my-2 text-xs italic text-[#e46b6b]">{errors.password}</p>}
             </div>
             <button
@@ -129,10 +138,7 @@ const Form = () => {
               Login
             </button>
             <SocialMediaLogin />
-            <p>
-              {formValues.email}
-              {formValues.email}
-            </p>
+        
           </form>
         </div>
       )}

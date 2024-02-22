@@ -76,14 +76,14 @@ For form validation used Reach hoof form and Zod:
 npm install -D prettier prettier-plugin-tailwindcss
 
 Create .prettierrc file in root directoy and add configuration:
-  {
-  "semi": true,
-  "tabWidth": 2,
-  "printWidth": 100,
-  "singleQuote": true,
-  "trailingComma": "none",
-  "jsxBracketSameLine": true,
-  "plugins": ["prettier-plugin-tailwindcss"]
+{
+"semi": true,
+"tabWidth": 2,
+"printWidth": 100,
+"singleQuote": true,
+"trailingComma": "none",
+"jsxBracketSameLine": true,
+"plugins": ["prettier-plugin-tailwindcss"]
 }
 
 ## Troubleshooting
@@ -137,6 +137,9 @@ And then import it in your test files by:
 
 import '@testing-library/jest-dom'
 
+To install user event:
+npm install --save-dev @testing-library/user-event @testing-library/dom
+
 ## Deployment
 
 The app is deployed using [Netlify](https://as-react-signup-form.netlify.app/)
@@ -153,5 +156,7 @@ Jest [Matchers](https://jestjs.io/docs/using-matchers)
 
 React Testing library [GetByRole](https://testing-library.com/docs/queries/byrole)
 [HTML ROLES](https://www.w3.org/TR/html-aria/#docconformance)
+
+React Testing [Playground Extension](https://chromewebstore.google.com/detail/testing-playground/hejbmebodbijjdhflfknehhcgaklhano)
 
 [Automatic Classes sorting with Prettier](https://tailwindcss.com/docs/editor-setup#automatic-class-sorting-with-prettier)
