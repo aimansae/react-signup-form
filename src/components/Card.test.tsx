@@ -8,4 +8,10 @@ describe("Card Component", () => {
     const formComponent = getByTestId("form-component");
     expect(formComponent).toBeInTheDocument();
   });
+
+  test ('Card Renders Image component', ()=>{
+    const {getByTestId} = render(<Card/>)
+    const imageComponent = getByTestId('image-omponent')
+    expect(imageComponent).toBeInTheDocument()
+  })
 });

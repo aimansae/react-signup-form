@@ -1,26 +1,23 @@
-import { FormData } from "./Form"
+import { FormProps } from './Form';
+ type SuccessMessageProps = {
+  formData: FormProps | null;
+};
 
-type Props = {
-    formInput: FormData | null
-}
-
-const SuccessMesage = ({formInput}:Props) => {
+const SuccessMesage = ({ formData }: SuccessMessageProps) => {
   return (
-    <div className=" px-4 py-3 rounded-md mb-4">
-    <h2 className="mb-2 text-[#56d856] text-lg font-bold ">
-      Account successfully Created!
-    </h2>
-    <h3 className="text-gray-600 mb-2 font-bold">Your Details:</h3>
-    <div className="text-left flex flex-col py-4">
-      <p className="mb-1  border p-2 my-4 rounded-md outline-none">
-        Name: <span className="text-[#7433FF]">{formInput?.name}</span>
-      </p>
-      <p className="mb-1  border p-2 my-4  rounded-md outline-none">
-        Email: <span className="text-[#7433FF]">{formInput?.email}</span>
-      </p>
+    <div className=" mb-4 rounded-md px-4 py-3">
+      <h2 className="mb-2 text-lg font-bold text-[#56d856] ">Account successfully Created!</h2>
+      <h3 className="mb-2 font-bold text-gray-600">Your Details:</h3>
+      <div className="flex flex-col py-4 text-left">
+        <p className="my-4  mb-1 rounded-md border p-2 outline-none">
+          Name: <span className="text-[#7433FF]">{formData?.username}</span>
+        </p>
+        <p className="my-4  mb-1 rounded-md border  p-2 outline-none">
+          Email: <span className="text-[#7433FF]">{formData?.email}</span>
+        </p>
+      </div>
     </div>
-  </div>
-  )
-}
+  );
+};
 
-export default SuccessMesage
+export default SuccessMesage;

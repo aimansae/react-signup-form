@@ -52,9 +52,7 @@ git remote remove origin
 git remote add origin _link to the new repo here_
 git push origin master
 
-## Styling With [TailwindCss](https://tailwindcss.com/docs/guides/create-react-app:
-
-)
+## Styling With [TailwindCss](https://tailwindcss.com/docs/guides/vite)
 
 - Install tailwind:
   npm install tailwindcss@latest postcss@latest autoprefixer@latest
@@ -73,6 +71,21 @@ For form validation used Reach hoof form and Zod:
 
             npm install react-hook-form zod @hookform/resolvers
 
+### Prettier [Setup](https://github.com/tailwindlabs/prettier-plugin-tailwindcss):
+
+npm install -D prettier prettier-plugin-tailwindcss
+
+Create .prettierrc file in root directoy and add configuration:
+  {
+  "semi": true,
+  "tabWidth": 2,
+  "printWidth": 100,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "jsxBracketSameLine": true,
+  "plugins": ["prettier-plugin-tailwindcss"]
+}
+
 ## Troubleshooting
 
 While running tests encountered the following paring error for focusImage
@@ -90,17 +103,17 @@ npm install --save-dev jest-transform-stub
 
 }
 
-did not work
+Solution did not work
 
-1. Created a _ _mocks_ _ directory with imageMock.js file in it:
-    module.exports = "test-file-stub";
+1. Created a \_ _mocks_ \_ directory with imageMock.js file in it:
+   module.exports = "test-file-stub";
 
 2. Removed jest.config.cjs file, add the configuration under Jest in package,json file:
-    "jest": {
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/__mocks__/imageMock.js"
-    }
-  }
+   "jest": {
+   "moduleNameMapper": {
+   "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/**mocks**/imageMock.js"
+   }
+   }
 
 While running test for Card Component faced the following error:
 ![Jest Error](./src//assets/tobeindoc.PNG)
@@ -111,20 +124,34 @@ toBeInTheDocument is not part of RTL. Need to install [jest-dom](https://github.
 
     npm install --save-dev @testing-library/jest-dom
 
-If you're using TypeScript, make sure your setup file is a .ts and not a .js to include the necessary types.
+With TypeScript, setup file is a .ts and not a .js .
 
-You will also need to include your setup file in your tsconfig.json if you haven't already:
+Include your setup file in your tsconfig.json if you haven't already:
 
-  // In tsconfig.json
-  "include": [
-    ...
-    "./jest-setup.ts"
-  ],   
+// In tsconfig.json
+"include": [
+...
+"./jest-setup.ts"
+],  
 And then import it in your test files by:
 
 import '@testing-library/jest-dom'
 
-
 ## Deployment
 
 The app is deployed using [Netlify](https://as-react-signup-form.netlify.app/)
+
+// What to test? Ensure the component renders, renders with props, according to state, it reacts/handles to events (form, input buttons)
+
+### Additional info and Resources:
+
+to run tests: npm test
+to watch tests: npm run test -- --watch
+
+React testing [tutorial](https://www.youtube.com/watch?v=2TkpBziqkRA&list=PLC3y8-rFHvwirqe1KHFCHJ0RqNuN61SJd&index=11)
+Jest [Matchers](https://jestjs.io/docs/using-matchers)
+
+React Testing library [GetByRole](https://testing-library.com/docs/queries/byrole)
+[HTML ROLES](https://www.w3.org/TR/html-aria/#docconformance)
+
+[Automatic Classes sorting with Prettier](https://tailwindcss.com/docs/editor-setup#automatic-class-sorting-with-prettier)
