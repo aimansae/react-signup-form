@@ -30,7 +30,7 @@ const Form = () => {
     if (!formValues.username.trim()) {
       displayErrors.username = 'Username is required';
     } else if (formValues.username.length < 3) {
-      displayErrors.username = 'Minimum 3 character required';
+      displayErrors.username = 'Minimum 3 characters required';
     } else if (!/^[a-zA-Z]+$/.test(formValues.username)) {
       displayErrors.username = 'Only Letters are allowed';
     }
@@ -60,7 +60,6 @@ const Form = () => {
       setFormValues({ username: '', email: '', password: '' });
     } else {
       setErrors(displayErrors);
-      
     }
   };
 
@@ -98,7 +97,11 @@ const Form = () => {
                 value={formValues.username}
                 className="placeholder-sm rounded-md border p-2 text-xs text-[#7433FF] outline-none focus:border-[#7433FF]"></input>
 
-              {errors && <p data-testid='username-error' className="my-2 text-xs italic text-[#e46b6b]">{errors.username}</p>}
+              {errors && (
+                <p data-testid="username-error" className="my-2 text-xs italic text-[#e46b6b]">
+                  {errors.username}
+                </p>
+              )}
             </div>
             <div className="flex flex-col">
               <label htmlFor="email" className="my-2 text-left text-sm">
@@ -113,7 +116,7 @@ const Form = () => {
                 placeholder="focus001@gmail.com"
                 className="placeholder-sm rounded-md border p-2 text-xs text-[#7433FF] outline-none focus:border-[#7433FF]"
               />
-              {errors && <p className="my-2 text-xs italic text-[#e46b6b]">{errors.email}</p>}
+              {errors && <p data-testid="email-error" className="my-2 text-xs italic text-[#e46b6b]">{errors.email}</p>}
             </div>
             <div className="flex flex-col">
               <label htmlFor="password" className="my-2 text-left text-sm">
@@ -128,7 +131,7 @@ const Form = () => {
                 placeholder="8+ characters"
                 className="placeholder-sm rounded-md border p-2 text-xs text-[#7433FF] outline-none focus:border-[#7433FF]"
               />
-              {errors && <p className="my-2 text-xs italic text-[#e46b6b]">{errors.password}</p>}
+              {errors && <p data-testid="password-error" className="my-2 text-xs italic text-[#e46b6b]">{errors.password}</p>}
             </div>
             <button
               type="submit"
@@ -138,7 +141,6 @@ const Form = () => {
               Login
             </button>
             <SocialMediaLogin />
-        
           </form>
         </div>
       )}
