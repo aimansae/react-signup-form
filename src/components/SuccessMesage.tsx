@@ -5,7 +5,7 @@ import { FormProps } from './Form';
 
 const SuccessMesage = ({ formData }: SuccessMessageProps) => {
   return (
-    <div className=" mb-4 rounded-md px-4 py-3">
+    <div data-testid='success-message' className=" mb-4 rounded-md px-4 py-3">
       <h2 className="mb-2 text-lg font-bold text-[#56d856] ">Account successfully Created!</h2>
       <h3 className="mb-2 font-bold text-gray-600">Your Details:</h3>
       <div className="flex flex-col py-4 text-left">
