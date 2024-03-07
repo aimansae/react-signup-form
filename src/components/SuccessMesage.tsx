@@ -1,20 +1,35 @@
+import { BiSolidUserDetail } from 'react-icons/bi';
+
 import { FormProps } from './Form';
- type SuccessMessageProps = {
+type SuccessMessageProps = {
   formData: FormProps | null;
 };
 
 const SuccessMesage = ({ formData }: SuccessMessageProps) => {
   return (
-    <div data-testid='success-message' className=" mb-4 rounded-md px-4 py-3">
-      <h2 className="mb-2 text-lg font-bold text-[#56d856] ">Account successfully Created!</h2>
-      <h3 className="mb-2 font-bold text-gray-600">Your Details:</h3>
-      <div className="flex flex-col py-4 text-left">
-        <p className="my-4  mb-1 rounded-md border p-2 outline-none">
-          Name: <span className="text-[#7433FF]" data-testid='display-username'>{formData?.username}</span>
-        </p>
-        <p className="my-4  mb-1 rounded-md border  p-2 outline-none">
-          Email: <span className="text-[#7433FF]" data-testid='display-email'>{formData?.email}</span>
-        </p>
+    <div data-testid="success-message" className="main-container">
+      <h1 className="heading1">Welcome to Focus!</h1>
+      <h2 className="heading2">Account successfully created</h2>
+
+      <div className="flex flex-col py-2 text-left">
+        <div className="heading-icon">
+          <BiSolidUserDetail className="detail-icon" />
+          <h3 className="heading3">Your Details:</h3>
+        </div>
+        <div className="deatil-container">
+          <p className="label-style my-1">
+            Username:{' '}
+            <span className="span" data-testid="display-username">
+              {formData?.username}
+            </span>
+          </p>
+          <p className=" label-style  my-1">
+            Email:{' '}
+            <span className="span" data-testid="display-email">
+              {formData?.email}
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   );

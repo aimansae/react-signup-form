@@ -97,7 +97,7 @@ describe('Form submission', () => {
     await userEvent.click(loginButton);
 
     await waitFor(() => {
-      expect(screen.getByText('Account successfully Created!')).toBeInTheDocument();
+      expect(screen.getByText(/Account successfully created/i)).toBeInTheDocument();
       expect(screen.getByText('aimansaeed')).toBeInTheDocument();
       expect(screen.getByText('aiman@gmail.com')).toBeInTheDocument();
     });

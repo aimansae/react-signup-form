@@ -65,6 +65,13 @@ git push origin master
 
 - Download extension Tailwind CSS IntelliSense
 
+**For better development experience, as per
+mentor's advice**
+
+- [Installed Prettier plugin](https://tailwindcss.com/docs/editor-setup#automatic-class-sorting-with-prettier)
+- [Created custom theme](https://tailwindcss.com/docs/theme)
+- [Added custom classes](https://tailwindcss.com/docs/adding-custom-styles)
+
 ### Form Validation
 
 For form validation used Reach hoof form and Zod:

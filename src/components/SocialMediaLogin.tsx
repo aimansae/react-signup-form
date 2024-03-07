@@ -5,21 +5,21 @@ import { FaLinkedinIn } from 'react-icons/fa6'
 const SocialMediaLogin = () => {
   return (
    
-        <div className="flex justify-start items-center">
+        <div className="socialmedia-container">
               <div className="flex ">
-                <p className="text-gray-400 text-sm sm:text-xs mr-1">
+                <p className="heading2 ">
                   Create an account with
                 </p>
               </div>
-              <div className="flex items-center text-xl">
+              <div className="socialicon-container">
                 <a href="https://www.facebook.com" target="_blank">
-                  <FaFacebookF className="sm:m-2 text-[#316FF6] border border-gray-300 rounded-full text-4xl p-2 hover:transform hover:scale-105" />
+                  <FaFacebookF className="socialmedia-icon" />
                 </a>
                 <a href="https://www.linkedin.com" target="_blank">
-                  <FaLinkedinIn className="sm:m-2 text-[#0077B5] border border-gray-300 rounded-full p-2 text-4xl hover:transform hover:scale-105" />
+                  <FaLinkedinIn className="socialmedia-icon" />
                 </a>
                 <a href="https://www.google.com" target="_blank">
-                  <FaGoogle className="sm:m-2 text-[black] border border-gray-300 rounded-full  p-2 text-4xl sm-text:3xl hover:transform hover:scale-105" />
+                  <FaGoogle className="socialmedia-icon" />
                 </a>
               </div>
          

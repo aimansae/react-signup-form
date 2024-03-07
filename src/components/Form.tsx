@@ -64,28 +64,28 @@ const Form = () => {
   };
 
   return (
-    <div data-testid="form-component" className="flex flex-col items-center justify-center">
+    <div data-testid="form-component" className="main-div">
       {showMessage ? (
         <SuccessMesage formData={submittedData} />
       ) : (
         <div className="mx-auto w-full ">
-          <div className="flex items-center justify-end p-2 text-right text-xs">
-            <p className="mx-2  my-2 flex items-center text-gray-light">Alreay have an account?</p>
+          <div className="form-container">
+            <h2 className="heading-sigin">Already have an account?</h2>
             <button
               type="submit"
               className={
-                'flex items-center rounded-full border border-gray-light p-2 text-xs text-gray-400 shadow-sm hover:border-gray-400'
+              'signin-button'
               }>
               SIGN IN
             </button>
           </div>
           <form
             onSubmit={handleSubmit}
-            className="mx-auto w-full max-w-[400px] bg-white p-2  text-left  sm:p-4">
-            <h2 className="l font-bold md:text-xl">Welcome to Focus!</h2>
-            <h3 className="text-sm  text-gray-400 md:text-xs">Register your account</h3>
+            className="form">
+            <h1 className="heading1">Welcome to Focus!</h1>
+            <h2 className="heading2">Register your account</h2>
             <div className="flex flex-col py-2">
-              <label htmlFor="username" className="my-2 text-sm ">
+              <label htmlFor="username" className='label-style'>
                 Username
               </label>
               <input
@@ -95,16 +95,16 @@ const Form = () => {
                 name="username"
                 placeholder="Jhon"
                 value={formValues.username}
-                className="placeholder-sm rounded-md border p-2 text-xs text-[#7433FF] outline-none focus:border-[#7433FF]"></input>
+                className="input-style"></input>
 
               {errors && (
-                <p data-testid="username-error" className="my-2 text-xs italic text-[#e46b6b]">
+                <p data-testid="username-error" className="error-style">
                   {errors.username}
                 </p>
               )}
             </div>
             <div className="flex flex-col">
-              <label htmlFor="email" className="my-2 text-left text-sm">
+              <label htmlFor="email" className='label-style'>
                 Email
               </label>
               <input
@@ -114,12 +114,16 @@ const Form = () => {
                 name="email"
                 id="email"
                 placeholder="focus001@gmail.com"
-                className="placeholder-sm rounded-md border p-2 text-xs text-[#7433FF] outline-none focus:border-[#7433FF]"
+                className="input-style"
               />
-              {errors && <p data-testid="email-error" className="my-2 text-xs italic text-[#e46b6b]">{errors.email}</p>}
+              {errors && (
+                <p data-testid="email-error" className="error-style">
+                  {errors.email}
+                </p>
+              )}
             </div>
             <div className="flex flex-col">
-              <label htmlFor="password" className="my-2 text-left text-sm">
+              <label htmlFor="password" className='label-style'>
                 Password
               </label>
               <input
@@ -129,15 +133,17 @@ const Form = () => {
                 name="password"
                 id="password"
                 placeholder="8+ characters"
-                className="placeholder-sm rounded-md border p-2 text-xs text-[#7433FF] outline-none focus:border-[#7433FF]"
+                className="input-style"
               />
-              {errors && <p data-testid="password-error" className="my-2 text-xs italic text-[#e46b6b]">{errors.password}</p>}
+              {errors && (
+                <p data-testid="password-error" className="error-style">
+                  {errors.password}
+                </p>
+              )}
             </div>
             <button
               type="submit"
-              className={
-                'my-4 rounded-full bg-[#7433FF] px-12 py-2 text-sm  text-white shadow-sm shadow-gray-600 hover:bg-purple-800'
-              }>
+              className='login-button'>
               Login
             </button>
             <SocialMediaLogin />

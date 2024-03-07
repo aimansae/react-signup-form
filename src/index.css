@@ -3,7 +3,88 @@
 @tailwind utilities;
 
 body {
-  background-image: url("./assets/background-image.jpg");
+  background-image: url('./assets/background-image.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.main-div {
+  @apply flex flex-col items-center justify-center h-auto md:p-2;
+}
+
+.form-container {
+  @apply flex items-center justify-end p-2 text-right text-xs;
+}
+
+.signin-button {
+  @apply border-gray-light text-gray-darker font-bold hover:text-gray-dark hover:border-gray-dark flex items-center rounded-full border p-2  text-xs text-center shadow-sm px-4;
+}
+
+.form {
+  @apply mx-auto w-full max-w-[400px] bg-white p-4 sm:text-left sm:p-2;
+}
+.heading-sigin {
+  @apply text-gray-dark mr-1 py-2 text-xs;
+}
+
+.heading1 {
+  /* @apply lg:text-heading-lg md:text-heading-md font-heading-lg md:font-heading-md; */
+  @apply text-2xl sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold
+}
+.heading2 {
+  @apply text-gray-dark py-2 text-sm;
+}
+
+.input-style {
+  @apply text-custom-purple border-gray-light focus:border-custom-purple rounded-md border p-2 text-xs outline-none;
+}
+
+.error-style {
+  @apply text-custom-red my-1 text-xs italic;
+}
+.label-style {
+  @apply mt-2 text-left text-sm;
+}
+
+.login-button {
+  @apply bg-custom-purple shadow-gray-light hover:bg-dark-purple my-4 rounded-full px-12  py-2 text-sm text-white shadow-sm  sm:inline-block sm:mx-auto;
+}
+
+/*Success Message page*/
+
+.main-container{
+  @apply rounded-md p-4
+}
+.success-heading {
+  @apply text-lg font-bold mb-2
+}
+
+.heading3{
+  @apply text-gray-dark py-2 text-base
+}
+
+.heading-icon{
+  @apply flex items-center text-gray-dark
+}
+
+.detail-icon {
+@apply text-2xl mr-1
+}
+
+.span{
+@apply text-custom-purple font-bold
+}
+
+/*Socialmedia component*/
+
+.socialmedia-container{
+  @apply flex flex-col  items-center sm:flex-row 
+}
+
+.socialicon-container {
+  @apply flex items-center mt-4 sm:mt-0
+}
+
+.socialmedia-icon {
+  @apply m-1 text-[#316FF6] border border-gray-light rounded-full text-4xl p-2 hover:transform hover:scale-105
 }
