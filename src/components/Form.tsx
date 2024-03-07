@@ -70,11 +70,11 @@ const Form = () => {
       ) : (
         <div className="mx-auto w-full ">
           <div className="flex items-center justify-end p-2 text-right text-xs">
-            <p className="mx-2  my-2 flex items-center text-gray-400">Alreay have an account?</p>
+            <p className="mx-2  my-2 flex items-center text-gray-light">Alreay have an account?</p>
             <button
               type="submit"
               className={
-                'flex items-center rounded-full border border-gray-200 p-2 text-xs text-gray-400 shadow-sm hover:border-gray-400'
+                'flex items-center rounded-full border border-gray-light p-2 text-xs text-gray-400 shadow-sm hover:border-gray-400'
               }>
               SIGN IN
             </button>

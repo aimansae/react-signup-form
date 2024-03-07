@@ -10,10 +10,10 @@ const SuccessMesage = ({ formData }: SuccessMessageProps) => {
       <h3 className="mb-2 font-bold text-gray-600">Your Details:</h3>
       <div className="flex flex-col py-4 text-left">
         <p className="my-4  mb-1 rounded-md border p-2 outline-none">
-          Name: <span className="text-[#7433FF]">{formData?.username}</span>
+          Name: <span className="text-[#7433FF]" data-testid='display-username'>{formData?.username}</span>
         </p>
         <p className="my-4  mb-1 rounded-md border  p-2 outline-none">
-          Email: <span className="text-[#7433FF]">{formData?.email}</span>
+          Email: <span className="text-[#7433FF]" data-testid='display-email'>{formData?.email}</span>
         </p>
       </div>
     </div>
