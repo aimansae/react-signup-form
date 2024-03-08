@@ -26,9 +26,9 @@ describe('Main renders', () => {
     await userEvent.click(emailInput);
     await userEvent.click(passwordInput);
 
-    expect(usernameInput).toHaveClass('focus:border-[#7433FF]');
-    expect(emailInput).toHaveClass('focus:border-[#7433FF]');
-    expect(passwordInput).toHaveClass('focus:border-[#7433FF]');
+    expect(usernameInput).toHaveStyle('border-color: custom-purple');
+    expect(emailInput).toHaveStyle('border-color: custom-purple');
+    expect(passwordInput).toHaveStyle('border-color: custom-purple');
   });
 });
 
