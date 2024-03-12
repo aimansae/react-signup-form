@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react';
 import SocialMediaLogin from './SocialMediaLogin';
 import { ChangeEvent } from 'react';
-import SuccessMesage from './SuccessMesage';
+import SuccessMessage from './SuccessMessage';
 
 export type FormProps = {
   username: string;
@@ -18,7 +18,7 @@ const Form = () => {
 
   const [errors, setErrors] = useState<Partial<FormProps>>({});
   const [showMessage, setShowMessage] = useState(false);
-  const [submittedData, setSumbittedData] = useState<FormProps | null>(null);
+  const [submittedData, setSubmittedData] = useState<FormProps | null>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -56,7 +56,7 @@ const Form = () => {
 
     if (formIsValid) {
       setShowMessage(true);
-      setSumbittedData(formValues);
+      setSubmittedData(formValues);
       setFormValues({ username: '', email: '', password: '' });
     } else {
       setErrors(displayErrors);
@@ -66,26 +66,20 @@ const Form = () => {
   return (
     <div data-testid="form-component" className="main-div">
       {showMessage ? (
-        <SuccessMesage formData={submittedData} />
+        <SuccessMessage formData={submittedData} />
       ) : (
         <div className="mx-auto w-full ">
           <div className="form-container">
-            <h2 className="heading-sigin">Already have an account?</h2>
-            <button
-              type="submit"
-              className={
-              'signin-button'
-              }>
+            <p className="signin-text">Already have an account?</p>
+            <button type="submit" className={'signin-button'}>
               SIGN IN
             </button>
           </div>
-          <form
-            onSubmit={handleSubmit}
-            className="form">
+          <form onSubmit={handleSubmit} className="form">
             <h1 className="heading1">Welcome to Focus!</h1>
             <h2 className="heading2">Register your account</h2>
             <div className="flex flex-col py-2">
-              <label htmlFor="username" className='label-style'>
+              <label htmlFor="username" className="label-style">
                 Username
               </label>
               <input
@@ -93,7 +87,7 @@ const Form = () => {
                 type="text"
                 id="username"
                 name="username"
-                placeholder="Jhon"
+                placeholder="John"
                 value={formValues.username}
                 className="input-style"></input>
 
@@ -104,7 +98,7 @@ const Form = () => {
               )}
             </div>
             <div className="flex flex-col">
-              <label htmlFor="email" className='label-style'>
+              <label htmlFor="email" className="label-style">
                 Email
               </label>
               <input
@@ -123,7 +117,7 @@ const Form = () => {
               )}
             </div>
             <div className="flex flex-col">
-              <label htmlFor="password" className='label-style'>
+              <label htmlFor="password" className="label-style">
                 Password
               </label>
               <input
@@ -141,9 +135,7 @@ const Form = () => {
                 </p>
               )}
             </div>
-            <button
-              type="submit"
-              className='login-button'>
+            <button type="submit" className="login-button">
               Login
             </button>
             <SocialMediaLogin />

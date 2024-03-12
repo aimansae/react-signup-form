@@ -2,89 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-image: url('./assets/background-image.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
 }
+
+body {
+  background: linear-gradient(to left, #8457ec, #3ca4ec);
+}
+
+/*Form Component*/
 
 .main-div {
-  @apply flex flex-col items-center justify-center h-auto md:p-2;
+  @apply flex h-auto flex-col items-center justify-center md:p-2;
 }
-
 .form-container {
   @apply flex items-center justify-end p-2 text-right text-xs;
 }
-
 .signin-button {
-  @apply border-gray-light text-gray-darker font-bold hover:text-gray-dark hover:border-gray-dark flex items-center rounded-full border p-2  text-xs text-center shadow-sm px-4;
+  @apply flex items-center rounded-full border border-gray-light p-2 px-4 text-center text-xs font-bold  text-gray-darker shadow-sm hover:border-gray-dark hover:text-gray-dark;
 }
-
 .form {
-  @apply mx-auto w-full max-w-[400px] bg-white p-4 sm:text-left sm:p-2;
+  @apply mx-auto w-full max-w-[400px] bg-white p-4 sm:p-2 sm:text-left;
 }
-.heading-sigin {
-  @apply text-gray-dark mr-1 py-2 text-xs;
+.signin-text {
+  @apply mr-1 py-2 text-sm text-gray-dark;
 }
-
 .heading1 {
-  /* @apply lg:text-heading-lg md:text-heading-md font-heading-lg md:font-heading-md; */
-  @apply text-2xl sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold
+  @apply text-2xl font-bold sm:text-lg md:text-xl lg:text-2xl xl:text-3xl;
 }
 .heading2 {
-  @apply text-gray-dark py-2 text-sm;
+  @apply mr-2 py-2 text-sm text-gray-dark;
 }
-
 .input-style {
-  @apply text-custom-purple border-gray-light focus:border-custom-purple rounded-md border p-2 text-xs outline-none;
+  @apply rounded-md border border-gray-light p-2 text-xs text-custom-purple outline-none focus:border-custom-purple;
 }
-
 .error-style {
-  @apply text-custom-red my-1 text-xs italic;
+  @apply my-1 text-xs italic text-custom-red;
 }
 .label-style {
-  @apply mt-2 text-left text-sm;
+  @apply my-2 text-left text-sm;
 }
-
 .login-button {
-  @apply bg-custom-purple shadow-gray-light hover:bg-dark-purple my-4 rounded-full px-12  py-2 text-sm text-white shadow-sm  sm:inline-block sm:mx-auto;
+  @apply my-4 rounded-full bg-custom-purple px-12 py-2 text-sm  text-white shadow-sm shadow-gray-light hover:bg-dark-purple  sm:mx-auto sm:inline-block;
 }
 
-/*Success Message page*/
+/*SuccessMessage Component */
 
-.main-container{
-  @apply rounded-md p-4
+.main-container {
+  @apply rounded-md p-4;
 }
 .success-heading {
-  @apply text-lg font-bold mb-2
+  @apply mb-2 text-lg font-bold;
 }
-
-.heading3{
-  @apply text-gray-dark py-2 text-base
+.heading3 {
+  @apply py-2 text-base text-gray-dark;
 }
-
-.heading-icon{
-  @apply flex items-center text-gray-dark
+.heading-icon {
+  @apply flex items-center text-gray-dark;
 }
-
 .detail-icon {
-@apply text-2xl mr-1
+  @apply mr-1 text-2xl;
+}
+.span {
+  @apply font-bold text-custom-purple;
 }
 
-.span{
-@apply text-custom-purple font-bold
+/*SocialMediaLogin Component*/
+
+.social-media-container {
+  @apply flex flex-col  items-center sm:flex-row;
 }
-
-/*Socialmedia component*/
-
-.socialmedia-container{
-  @apply flex flex-col  items-center sm:flex-row 
+.social-media-icon-container {
+  @apply mt-4 flex items-center sm:mt-0;
 }
-
-.socialicon-container {
-  @apply flex items-center mt-4 sm:mt-0
-}
-
 .socialmedia-icon {
-  @apply m-1 text-[#316FF6] border border-gray-light rounded-full text-4xl p-2 hover:transform hover:scale-105
+  @apply m-1 rounded-full border border-gray-light p-2 text-4xl text-[#316FF6] hover:scale-105 hover:transform;
 }

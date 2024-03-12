@@ -4,7 +4,7 @@ import HeroImage from './HeroImage';
 const Card = () => {
   return (
     <div className="flex h-screen w-full overflow-y-hidden p-2 font-sans ">
-      <div className="m-auto grid h-[550px] grid-cols-1 gap-6 bg-white shadow-lg shadow-gray-600 sm:max-w-[900px] md:grid-cols-2">
+      <div className="shadow-gray-600 m-auto grid h-[550px] grid-cols-1 gap-6 bg-white shadow-lg sm:max-w-[900px] md:grid-cols-2">
         <HeroImage />
         <Form />
       </div>

@@ -5,18 +5,17 @@ type SuccessMessageProps = {
   formData: FormProps | null;
 };
 
-const SuccessMesage = ({ formData }: SuccessMessageProps) => {
+const SuccessMessage = ({ formData }: SuccessMessageProps) => {
   return (
     <div data-testid="success-message" className="main-container">
       <h1 className="heading1">Welcome to Focus!</h1>
       <h2 className="heading2">Account successfully created</h2>
-
       <div className="flex flex-col py-2 text-left">
         <div className="heading-icon">
           <BiSolidUserDetail className="detail-icon" />
           <h3 className="heading3">Your Details:</h3>
         </div>
-        <div className="deatil-container">
+        <div>
           <p className="label-style my-1">
             Username:{' '}
             <span className="span" data-testid="display-username">
@@ -35,4 +34,4 @@ const SuccessMesage = ({ formData }: SuccessMessageProps) => {
   );
 };
 
-export default SuccessMesage;
+export default SuccessMessage;

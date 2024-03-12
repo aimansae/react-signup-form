@@ -15,7 +15,7 @@ describe('Main renders', () => {
     expect(screen.getByRole('button', { name: /login/i })).toBeInTheDocument();
   });
 
-  test('Inputs are heighlighted on click', async () => {
+  test('Inputs are highlighted on click', async () => {
     render(<Form />);
 
     const usernameInput = screen.getByLabelText('Username');

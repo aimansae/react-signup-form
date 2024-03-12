@@ -33,7 +33,7 @@ Starter Project references can be found [here](https://github.com/aimansae/react
 ## Steps to use starter project
 
 1. Create a new Repository in [Github](https://github.com/aimansae/react-signup-form)
-2. open command Plaette in Vs Code and type Git clone
+2. open command Palette in Vs Code and type Git clone
 3. Paste the link from Github's starter project (all files will be locally imported to VsCode)
 4. Make sure no node_module files are there
 5. In terminal type:
@@ -82,7 +82,7 @@ For form validation used Reach hoof form and Zod:
 
 npm install -D prettier prettier-plugin-tailwindcss
 
-Create .prettierrc file in root directoy and add configuration:
+Create .prettierrc file in root directory and add configuration:
 {
 "semi": true,
 "tabWidth": 2,
@@ -103,7 +103,7 @@ While running tests encountered the following paring error for focusImage
 **Fixed** by installing:
 npm install --save-dev jest-transform-stub
 
-    include transofrmer for images in package.json file:
+    include transformer for images in package.json file:
       "transform": {
     "^.+\\.tsx?$": "ts-jest",
     "^.+\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/node_modules/jest-transform-stub"
@@ -167,3 +167,5 @@ React Testing library [GetByRole](https://testing-library.com/docs/queries/byrol
 React Testing [Playground Extension](https://chromewebstore.google.com/detail/testing-playground/hejbmebodbijjdhflfknehhcgaklhano)
 
 [Automatic Classes sorting with Prettier](https://tailwindcss.com/docs/editor-setup#automatic-class-sorting-with-prettier)
+
+- [Spell check extension](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
