@@ -72,14 +72,6 @@ mentor's advice**
 - [Created custom theme](https://tailwindcss.com/docs/theme)
 - [Added custom classes](https://tailwindcss.com/docs/adding-custom-styles)
 
-### Form Validation
-
-For form validation initially used react hook form and Zod:
-
-            npm install react-hook-form zod @hookform/resolvers
-
-However then tried to manually validate the form, with no external aid.            
-
 ### Prettier [Setup](https://github.com/tailwindlabs/prettier-plugin-tailwindcss):
 
 npm install -D prettier prettier-plugin-tailwindcss
@@ -153,7 +145,6 @@ npm install --save-dev @testing-library/user-event @testing-library/dom
 
 The app is deployed using [Netlify](https://as-react-signup-form.netlify.app/)
 
-// What to test? Ensure the component renders, renders with props, according to state, it reacts/handles to events (form, input buttons)
 
 ### Additional info and Resources:
 
@@ -170,4 +161,4 @@ React Testing [Playground Extension](https://chromewebstore.google.com/detail/te
 
 [Automatic Classes sorting with Prettier](https://tailwindcss.com/docs/editor-setup#automatic-class-sorting-with-prettier)
 
-- [Spell check extension](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+[Spell check extension](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
