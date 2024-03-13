@@ -74,9 +74,11 @@ mentor's advice**
 
 ### Form Validation
 
-For form validation used Reach hoof form and Zod:
+For form validation initially used react hook form and Zod:
 
             npm install react-hook-form zod @hookform/resolvers
+
+However then tried to manually validate the form, with no external aid.            
 
 ### Prettier [Setup](https://github.com/tailwindlabs/prettier-plugin-tailwindcss):
 
