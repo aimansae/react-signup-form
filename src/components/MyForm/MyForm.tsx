@@ -1,7 +1,8 @@
 import { FormEvent, useState } from 'react';
-import SocialMediaLogin from './SocialMediaLogin';
+import { SocialMediaLinks } from '../SocialMediaLinks';
 import { ChangeEvent } from 'react';
-import SuccessMessage from './SuccessMessage';
+import { SuccessMessage } from '../SuccessMessage';
+import { Input } from '../Input';
 
 export type FormProps = {
   username: string;
@@ -9,7 +10,7 @@ export type FormProps = {
   password: string;
 };
 
-const Form = () => {
+const MyForm = () => {
   const [formValues, setFormValues] = useState<FormProps>({
     username: '',
     email: '',
@@ -64,81 +65,68 @@ const Form = () => {
   };
 
   return (
-    <div data-testid="form-component" className="main-div">
+    <div
+      data-testid="form-component"
+      className="flex h-auto flex-col items-center justify-center md:p-2">
       {showMessage ? (
         <SuccessMessage formData={submittedData} />
       ) : (
         <div className="mx-auto w-full ">
-          <div className="form-container">
-            <p className="signin-text">Already have an account?</p>
-            <button type="submit" className={'signin-button'}>
+          <div className="flex items-center justify-end p-2 text-right text-xs">
+            <p className="mr-1 py-2 text-sm text-gray-dark">Already have an account?</p>
+            <button
+              type="submit"
+              className="flex items-center rounded-full border border-gray-light p-2 px-4 text-center text-xs font-bold  text-gray-darker shadow-sm hover:border-gray-dark hover:text-gray-dark">
               SIGN IN
             </button>
           </div>
-          <form onSubmit={handleSubmit} className="form">
-            <h1 className="heading1">Welcome to Focus!</h1>
-            <h2 className="heading2">Register your account</h2>
+          <form
+            onSubmit={handleSubmit}
+            className="mx-auto w-full max-w-[400px] bg-white p-2 sm:p-2 sm:text-left">
+            <h1 className="text-2xl font-bold sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+              Welcome to Focus!
+            </h1>
+            <h2 className="mr-2 py-2 text-sm text-gray-dark">Register your account</h2>
             <div className="flex flex-col py-2">
-              <label htmlFor="username" className="label-style">
-                Username
-              </label>
-              <input
+              <Input
+                label="Username"
                 onChange={handleChange}
                 type="text"
                 id="username"
                 name="username"
                 placeholder="John"
                 value={formValues.username}
-                className="input-style"></input>
-
-              {errors && (
-                <p data-testid="username-error" className="error-style">
-                  {errors.username}
-                </p>
-              )}
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="email" className="label-style">
-                Email
-              </label>
-              <input
+                dataTestId="input-error-username"
+                error={errors.username || null}></Input>
+              <Input
+                label="Email"
                 onChange={handleChange}
                 value={formValues.email}
                 type="text"
                 name="email"
                 id="email"
                 placeholder="focus001@gmail.com"
-                className="input-style"
+                dataTestId="input-error-email"
+                error={errors.email || null}
               />
-              {errors && (
-                <p data-testid="email-error" className="error-style">
-                  {errors.email}
-                </p>
-              )}
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="password" className="label-style">
-                Password
-              </label>
-              <input
+              <Input
+                label="Password"
                 onChange={handleChange}
                 value={formValues.password}
                 type="password"
                 name="password"
                 id="password"
                 placeholder="8+ characters"
-                className="input-style"
+                dataTestId="input-error-password"
+                error={errors.password || null}
               />
-              {errors && (
-                <p data-testid="password-error" className="error-style">
-                  {errors.password}
-                </p>
-              )}
             </div>
-            <button type="submit" className="login-button">
+            <button
+              type="submit"
+              className="my-4 rounded-full bg-custom-purple px-12 py-2 text-sm  text-white shadow-sm shadow-gray-light hover:bg-dark-purple  sm:mx-auto sm:inline-block">
               Login
             </button>
-            <SocialMediaLogin />
+            <SocialMediaLinks />
           </form>
         </div>
       )}
@@ -146,4 +134,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default MyForm;

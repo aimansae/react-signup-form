@@ -1,11 +1,11 @@
 import { screen, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Form from './Form';
+import { MyForm } from '.';
 import userEvent from '@testing-library/user-event';
 
 describe('Main renders', () => {
   test('Home page elements are rendered', () => {
-    render(<Form />);
+    render(<MyForm />);
 
     expect(screen.getByRole('heading', { name: /welcome to focus!/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /register your account/i })).toBeInTheDocument();
@@ -16,7 +16,7 @@ describe('Main renders', () => {
   });
 
   test('Inputs are highlighted on click', async () => {
-    render(<Form />);
+    render(<MyForm />);
 
     const usernameInput = screen.getByLabelText('Username');
     const emailInput = screen.getByLabelText(/email/i);
@@ -34,21 +34,21 @@ describe('Main renders', () => {
 
 describe('Form submission', () => {
   test('Errors displaying when inputs are empty', async () => {
-    render(<Form />);
+    render(<MyForm />);
 
     await userEvent.click(screen.getByText(/login/i));
 
-    expect(screen.getByTestId('username-error')).toHaveTextContent(/name is required/i);
-    expect(screen.getByTestId('email-error')).toHaveTextContent(/email is required/i);
-    expect(screen.getByTestId('password-error')).toHaveTextContent(/password is required/i);
+    expect(screen.getByTestId('input-error-username')).toHaveTextContent(/username is required/i);
+    expect(screen.getByTestId('input-error-email')).toHaveTextContent(/email is required/i);
+    expect(screen.getByTestId('input-error-password')).toHaveTextContent(/password is required/i);
   });
 
   test('Username field validated based on input type', async () => {
-    render(<Form />);
+    render(<MyForm />);
 
     const usernameInput = screen.getByLabelText(/username/i);
     const loginButton = screen.getByRole('button', { name: /login/i });
-    const usernameError = screen.getByTestId('username-error');
+    const usernameError = screen.getByTestId('input-error-username');
 
     await userEvent.type(usernameInput, 'sa');
     await userEvent.click(loginButton);
@@ -61,10 +61,10 @@ describe('Form submission', () => {
   });
 
   test('Email field validated based on input type', async () => {
-    render(<Form />);
+    render(<MyForm />);
 
     const emailInput = screen.getByLabelText(/email/i);
-    const emailError = screen.getByTestId('email-error');
+    const emailError = screen.getByTestId('input-error-email');
     const loginButton = screen.getByRole('button', { name: /login/i });
 
     await userEvent.type(emailInput, 'aimansaeed');
@@ -73,10 +73,10 @@ describe('Form submission', () => {
   });
 
   test('Email field validated based on input type', async () => {
-    render(<Form />);
+    render(<MyForm />);
     const passwordInput = screen.getByLabelText(/password/i);
     const loginButton = screen.getByRole('button', { name: /login/i });
-    const passwordError = screen.getByTestId('password-error');
+    const passwordError = screen.getByTestId('input-error-password');
 
     await userEvent.type(passwordInput, '12vg');
     await userEvent.click(loginButton);
@@ -84,7 +84,7 @@ describe('Form submission', () => {
   });
 
   test('Show success message if form is correct', async () => {
-    render(<Form />);
+    render(<MyForm />);
 
     const usernameInput = screen.getByLabelText(/username/i);
     const emailInput = screen.getByLabelText(/email/i);

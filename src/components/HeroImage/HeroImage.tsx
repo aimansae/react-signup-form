@@ -1,4 +1,4 @@
-import focusImage from '../assets/hero-image.png';
+import focusImage from '../../assets/hero-image.png';
 
 const HeroImage = () => {
   return (
