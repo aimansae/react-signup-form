@@ -1,6 +1,6 @@
 type ErrorProps = {
   error: string | null;
-  dataTestId: string;
+  dataTestId?: string;
 };
 
 const InputError = ({ error, dataTestId }: ErrorProps) => {

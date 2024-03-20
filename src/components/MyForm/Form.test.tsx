@@ -48,15 +48,17 @@ describe('Form submission', () => {
 
     const usernameInput = screen.getByLabelText(/username/i);
     const loginButton = screen.getByRole('button', { name: /login/i });
-    const usernameError = screen.getByTestId('input-error-username');
 
     await userEvent.type(usernameInput, 'sa');
     await userEvent.click(loginButton);
+
+    const usernameError = screen.getByTestId('input-error-username');
     expect(usernameError).toHaveTextContent(/Minimum 3 characters required/i);
 
     await userEvent.clear(usernameInput);
     await userEvent.type(usernameInput, '1245664');
     await userEvent.click(loginButton);
+
     expect(usernameError).toHaveTextContent(/Only Letters are allowed/i);
   });
 
@@ -64,22 +66,24 @@ describe('Form submission', () => {
     render(<MyForm />);
 
     const emailInput = screen.getByLabelText(/email/i);
-    const emailError = screen.getByTestId('input-error-email');
     const loginButton = screen.getByRole('button', { name: /login/i });
 
     await userEvent.type(emailInput, 'aimansaeed');
     await userEvent.click(loginButton);
+    const emailError = screen.getByTestId('input-error-email');
+
     expect(emailError).toHaveTextContent(/Enter a valid email/);
   });
 
-  test('Email field validated based on input type', async () => {
+  test('Password field validated based on input type', async () => {
     render(<MyForm />);
     const passwordInput = screen.getByLabelText(/password/i);
     const loginButton = screen.getByRole('button', { name: /login/i });
-    const passwordError = screen.getByTestId('input-error-password');
 
     await userEvent.type(passwordInput, '12vg');
     await userEvent.click(loginButton);
+    const passwordError = screen.getByTestId('input-error-password');
+
     expect(passwordError).toHaveTextContent(/Minimum 8 character required/i);
   });
 
