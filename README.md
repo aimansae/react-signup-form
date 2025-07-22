@@ -1,58 +1,66 @@
 # Signup Form
 
-This is a simple React Signup Form project made using a starter project for react.
-Please find the Guidelines for the project:
+This is a responsive signup form built using React, TypeScript, and Tailwind CSS. The form includes real-time validation, error handling, and a simple login simulation using hardcoded credentials. It also features automated testing with Jest and React Testing Library.
 
-## Requirements: Create a Sign up form project.
+Live [Site](https://as-react-signup-form.netlify.app).
 
-1. Use the previous starter project, to kick-start your development.
-2. Create a new repository and push the starter as initial commit.
-3. Pick a styling solution of your choice. (I’d suggest you to use TailwindCSS). Once configured, push your changes! Keep your commit messages consistent and meaningful!
-   Start implementing the sign up form. Make sure to implement input validations. Handle the errors gracefully by showing error messages below each input.
-4. Use a pair of hardcoded username and password (and display them somewhere) to simulate the success output.
-5. For all other pairs of username/password simulate error output. (display an error message somewhere for example).
-6. Make sure the design is responsive (doesn’t have to be perfect, but it should at least look good and not be completely broken)
-7. Add tests, no excuses
+Github [Repo](https://github.com/aimansae/react-signup-form).
 
-## Additional requirements
 
-1. Create a Github [repository](https://github.com/).
-2. Commit your changes regularly.
-3. Adjust your README.md to explain your project.
-4. Deploy it to Netlify for free and put the URL in the README.md.
-5. How should it look
+![Image Error1](./src//assets/preview.PNG)
+## Features
 
-![Image Description](./src/assets/form-output.png)
+- Input validation for email and password fields
+- Real-time error display below each input
+- Simulated login using hardcoded credentials
+- Responsive design (mobile-friendly)
+- Styled with Tailwind CSS
+- Automated tests using Jest and React Testing Library
 
-**Time limit: 8 hours**
+## Requirements:
 
-Starter Project references can be found [here](https://github.com/aimansae/react-starter-project)
+- Use the provided React starter project to kick-start development.
+- Set up Tailwind CSS or your preferred styling tool.
+- Implement a responsive signup form with input validation.
+- Display form errors gracefully beneath inputs.
+- Simulate login with a hardcoded username/password combo and show a success message.
+- Show an error for all other credentials.
+- Make sure the form works on mobile and desktop.
+- Write tests — no excuses!
 
-# Getting Started
+**Time Limit: 8 hours**
 
-## Steps to use starter project
+## Technologies Used
 
-1. Create a new Repository in [Github](https://github.com/aimansae/react-signup-form)
-2. open command Palette in Vs Code and type Git clone
-3. Paste the link from Github's starter project (all files will be locally imported to VsCode)
-4. Make sure no node_module files are there
-5. In terminal type:
-   npm i
+- [React](https://reactjs.org/) – JavaScript library for building user interfaces
+- [TypeScript](https://www.typescriptlang.org/) – Adds static typing to JavaScript
+- [Tailwind CSS](https://tailwindcss.com/docs) – Utility-first CSS framework for rapid UI styling
+- [Vite](https://vitejs.dev/) – Fast frontend build tool
+- [Jest](https://jestjs.io/) – JavaScript testing framework
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) – Helps test UI components the way users interact
+- [User Event](https://testing-library.com/docs/user-event/intro/) – Simulates user interaction in tests
+- [Prettier](https://prettier.io/) – Code formatter
+- [Prettier Plugin for Tailwind](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier) – Automatically sorts Tailwind classes
 
-Start Project with:
 
-      npm run dev
+## Getting Started
+1. Clone the Starter Project
+```bash
+git clone https://github.com/aimansae/react-starter-project.git
+cd react-starter-project
+npm install
+npm run dev
+2. Push to New Repository
 
-### Commit Repo to Git
 
-In terminal type:
-git add .
-git commit -m 'Commit message here'
 git remote remove origin
-git remote add origin _link to the new repo here_
-git push origin master
+git remote add origin https://github.com/yourusername/react-signup-form.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+```
 
-## Styling With [TailwindCss](https://tailwindcss.com/docs/guides/vite)
+## Styling With [TailwindCSS](https://tailwindcss.com/docs/guides/vite)
 
 - Install tailwind:
   npm install tailwindcss@latest postcss@latest autoprefixer@latest
@@ -87,7 +95,7 @@ Create .prettierrc file in root directory and add configuration:
 "plugins": ["prettier-plugin-tailwindcss"]
 }
 
-## Troubleshooting
+## Testing &  Troubleshooting
 
 While running tests encountered the following paring error for focusImage
 
@@ -145,20 +153,41 @@ npm install --save-dev @testing-library/user-event @testing-library/dom
 
 The app is deployed using [Netlify](https://as-react-signup-form.netlify.app/)
 
+Make sure to add a netlify.toml if you have a custom build setup:
+
+```bash
+
+[build]
+command = "npm run build"
+publish = "dist"
+
+```
+
+## Future Features
+
+- Form success message modal with animation
+- Disable submit button until validation passes
+- Hook form state into a reusable custom hook
+- Store form data in localStorage (for offline retry)
+- Dark mode toggle
+- Integrate with real backend or mock API
+- Use react-hook-form for simplified validation
+- 100% test coverage
 
 ### Additional info and Resources:
 
-to run tests: npm test
-to watch tests: npm run test -- --watch
 
-React testing [tutorial](https://www.youtube.com/watch?v=2TkpBziqkRA&list=PLC3y8-rFHvwirqe1KHFCHJ0RqNuN61SJd&index=11)
+- React testing [tutorial](https://www.youtube.com/watch?v=2TkpBziqkRA&list=PLC3y8-rFHvwirqe1KHFCHJ0RqNuN61SJd&index=11)
 Jest [Matchers](https://jestjs.io/docs/using-matchers)
 
-React Testing library [GetByRole](https://testing-library.com/docs/queries/byrole)
+- React Testing library [GetByRole](https://testing-library.com/docs/queries/byrole)
 [HTML ROLES](https://www.w3.org/TR/html-aria/#docconformance)
 
-React Testing [Playground Extension](https://chromewebstore.google.com/detail/testing-playground/hejbmebodbijjdhflfknehhcgaklhano)
+- React Testing [Playground Extension](https://chromewebstore.google.com/detail/testing-playground/hejbmebodbijjdhflfknehhcgaklhano)
 
-[Automatic Classes sorting with Prettier](https://tailwindcss.com/docs/editor-setup#automatic-class-sorting-with-prettier)
+- [Automatic Classes sorting with Prettier](https://tailwindcss.com/docs/editor-setup#automatic-class-sorting-with-prettier)
 
-[Spell check extension](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+- [Spell check extension](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+
+## Acknowledgements
+Special thanks to my mentor Amal K. , whose guidance, support, and feedback were instrumental throughout this project.Thanks!
