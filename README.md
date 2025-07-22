@@ -2,7 +2,7 @@
 
 This is a responsive signup form built using React, TypeScript, and Tailwind CSS. The form includes real-time validation, error handling, and a simple login simulation using hardcoded credentials. It also features automated testing with Jest and React Testing Library.
 
-Live [Site](https://as-react-signup-form.netlify.app).
+Live [Site](https://as-singnup-form.netlify.app/).
 
 Github [Repo](https://github.com/aimansae/react-signup-form).
 
